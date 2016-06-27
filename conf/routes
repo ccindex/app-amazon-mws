@@ -1,0 +1,22 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET        /                    controllers.Application.index()
+GET        /test/a              controllers.Application.test()
+
+
+##ERP_TO_AP API
+GET        /ap/getCronOrderList              controllers.APIToERPController.getCronOrderList()
+GET        /ap/getCronOrderByAccount         controllers.APIToERPController.getCronOrderByAccount()
+GET        /ap/getS3FileIdList               controllers.APIToERPController.getS3FileIdList()
+POST       /ap/postCronOrder                 controllers.APIToERPController.postCronOrder()
+POST       /ap/updateCronOrder               controllers.APIToERPController.updateCronOrder()
+POST       /ap/putTracking                   controllers.APIToERPController.putTracking()
+GET        /ap/download                      controllers.APIToERPController.download()
+##GET        /ap/getOrderFile                  controllers.APIToERPController.getOrderFile()
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET        /assets/*file        controllers.Assets.versioned(path="/public", file: Asset)
